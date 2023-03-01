@@ -21,6 +21,52 @@
       "id": 7
     }
   ],
-  "albums": [{"id":232 , "name":"Hiking Trip" , "userId":3}],
+  "albums": [
+    {
+      "id": 232,
+      "title": "Hiking Trip",
+      "userId": 3
+    },
+    {
+      "userId": 3,
+      "title": "Incredible Granite Keyboard",
+      "id": 233
+    },
+    {
+      "userId": 3,
+      "title": "Awesome Cotton Keyboard",
+      "id": 234
+    },
+    {
+      "userId": 3,
+      "title": "Handcrafted Soft Cheese",
+      "id": 235
+    },
+    {
+      "userId": 7,
+      "title": "Elegant Soft Chair",
+      "id": 236
+    },
+    {
+      "userId": 6,
+      "title": "Practical Granite Pizza",
+      "id": 237
+    },
+    {
+      "userId": 3,
+      "title": "Intelligent Fresh Ball",
+      "id": 238
+    },
+    {
+      "userId": 3,
+      "title": "Bespoke Metal Bacon",
+      "id": 239
+    },
+    {
+      "userId": 3,
+      "title": "Refined Bronze Chicken",
+      "id": 240
+    }
+  ],
   "photos": []
 }

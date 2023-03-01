@@ -1,7 +1,7 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { userReducer } from "./slices/userSlice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { albumsApi , useFetchAlbumsQuery } from "./api/albumsApi";
+import { albumsApi , useFetchAlbumsQuery , useAddAlbumMutation } from "./api/albumsApi";
 
 
 
@@ -21,4 +21,4 @@ export * from "./thunks/fetchUser";
 export * from "./thunks/addUser";
 export * from "./thunks/removeUser";
 
-export { useFetchAlbumsQuery} 
+export { useFetchAlbumsQuery , useAddAlbumMutation} 
