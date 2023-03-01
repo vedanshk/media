@@ -1,58 +1,62 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers, addUser } from "../store";
+import { useEffect } from "react";
+import { fetchUsers, addUser , removeUser } from "../store";
+import { useSelector } from "react-redux";
+import useThunk from "../hooks/use-thunk";
 import Button from "./Button";
 import Skeleton from "./Skeleton";
+import UserListItem from "./UserListItem";
 function UsersList() {
-  const [isLoadingUsers, setIsLoadingUsers] = useState(false);
-  const [loadingUsersError, setLoadingUsersError] = useState(null);
-  const dispatch = useDispatch();
-  const { data} = useSelector((state) => state.users);
+  const [loadUser, isLoading, loadingError] = useThunk(fetchUsers);
+  const [createUser, isCreating, creatingError] = useThunk(addUser);
+  const { data } = useSelector((state) => state.users);
 
   console.log(data);
   useEffect(() => {
-    setIsLoadingUsers(true)
-    dispatch(fetchUsers()).unwrap().catch((err)=>{
-        setLoadingUsersError(err)
-    }).finally(()=>{
-
-            setIsLoadingUsers(false);
-    });
-  }, []);
+    loadUser();
+  }, [loadUser]);
 
   const handleUserClick = () => {
-    dispatch(addUser());
+    createUser();
   };
 
-  if (isLoadingUsers) {
-    return (
-      <div>
-        <Skeleton times={6} className="h-10 w-full" />
-      </div>
-    );
+  let content;
+  if (!creatingError) {
+    window.scrollTo({
+      left: 0,
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
   }
 
-  if (loadingUsersError) {
-    return <div>Error fetching data..</div>;
+  if (isLoading) {
+    content = <Skeleton times={6} className="h-10 w-full" />;
+  } else if (loadingError) {
+    content = <div>Error fetching data..</div>;
+  } else {
+    content = data.map((user) => {
+      return (
+        <UserListItem key={user.id} user={user} />
+      );
+    });
   }
-
-  const renderedUsers = data.map((user) => {
-    return (
-      <div key={user.id} className="mb-2 border rounded ">
-        <div className="flex p-2 justify-between items-center cursor-pointer">
-          {user.name}
-        </div>
-      </div>
-    );
-  });
 
   return (
     <div className="container mx-auto">
-      <div className="flex flex-row justify-between m-3">
-        <h1 className="m-2 text-xl"></h1>
-        <Button onClick={handleUserClick}>+ Add User</Button>
+      <div className="flex flex-row justify-between items-center m-6">
+        <h1 className="m-2 text-xl">Users</h1>
+
+        <Button
+          loading={isCreating}
+          className="fixed right-8 z-10 bg-gray-500 lg:right-24"
+          onClick={handleUserClick}
+        >
+          + Add User
+        </Button>
+
+        {creatingError && "Error creting user..."}
       </div>
-      Length: {renderedUsers}
+
+      {content}
     </div>
   );
 }

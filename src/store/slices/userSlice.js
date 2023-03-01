@@ -1,37 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { fetchUsers } from "../thunks/fetchUser";
-
+import { removeUser } from "../thunks/removeUser";
 import { addUser } from "../thunks/addUser";
+import { act } from "react-dom/test-utils";
 const UserSlice = createSlice({
   name: "user",
   initialState: {
     data: [],
-    isLoading: false,
-    error: null,
+
   },
   extraReducers(builder) {
-    builder.addCase(fetchUsers.pending, (state, action) => {
-      state.isLoading = true;
-    });
+
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       state.data = action.payload;
-      state.isLoading = false;
+    
     });
-    builder.addCase(fetchUsers.rejected, (state, action) => {
-      state.isLoading = false;
-      state.error = action.error;
-    });
-    builder.addCase(addUser.pending, (state, action) => {
-    });
+  
     builder.addCase(addUser.fulfilled, (state, action) => {
       state.data.push(action.payload);
-      state.isLoading = false;
+
     });
-    builder.addCase(addUser.rejected, (state, action) => {
-      state.isLoading = false;
-      state.error = action.error;
-    });
+
+    builder.addCase(removeUser.fulfilled , (state , action)=>{
+      const {id}  = action.payload;
+      const userIndexToBeRemoved =  state.data.findIndex(user => user.id === id);
+
+      state.data.splice(userIndexToBeRemoved , 1);
+      
+    })
+ 
   },
 });
 
