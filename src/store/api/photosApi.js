@@ -28,7 +28,7 @@ const photosApi = createApi({
       }),
       addPhoto: builder.mutation({
         invalidatesTags: (result, error, album) => {
-          return [{ type: "Album", id: album.id }];
+          return [{ type: "AlbumPhoto", id: album.id }];
         },
         query: (album) => {
           return {
@@ -43,7 +43,7 @@ const photosApi = createApi({
       }),
       removePhoto: builder.mutation({
         invalidatesTags: (result, error, photo) => {
-          return [{ type: "Album", id: photo.id }];
+          return [{ type: "Photo", id: photo.id }];
         },
         query: (photo) => {
           return {
