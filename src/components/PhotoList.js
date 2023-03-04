@@ -23,7 +23,7 @@ function PhotoList({ album }) {
 
   return (
     <div>
-      <div className="m-2 flex flex-row items-center justify-between">
+      <div className="m-2 flex flex-row items-center justify-between flex-wrap">
         <h3 className="text-lg font-bold"> Photos In {album.title}</h3>
         <Button loading={addPhotoResults.isLoading} onClick={handleAddPhoto}>
           + Add Photo

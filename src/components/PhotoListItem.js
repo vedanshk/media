@@ -8,12 +8,13 @@ function PhotoListItem({ photo }) {
   };
 
   return (
-    <div className="flex gap-2">
-      <Button loading={results.isLoading} onClick={() => handleDelete(photo)}>
-        <GoTrashcan />
-      </Button>
-      {photo.title}
-      <img src={photo.url} />
+    <div className="m-2 relative z-99">
+      <div className="absolute right-0 top-0 bg-white opacity-0 hover:opacity-80 z-100">
+        <Button loading={results.isLoading} onClick={() => handleDelete(photo)}>
+          <GoTrashcan />
+        </Button>
+      </div>
+      <img className="h-20 w-20" src={photo.url} />
     </div>
   );
 }
