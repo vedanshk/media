@@ -9,39 +9,19 @@
       "id": 4
     },
     {
-      "name": "Joel Wunsch",
-      "id": 5
-    },
-    {
       "name": "Jodi Ziemann",
       "id": 6
     },
     {
       "name": "Krista Reilly II",
       "id": 7
+    },
+    {
+      "name": "Kristina Durgan",
+      "id": 8
     }
   ],
   "albums": [
-    {
-      "id": 232,
-      "title": "Hiking Trip",
-      "userId": 3
-    },
-    {
-      "userId": 3,
-      "title": "Incredible Granite Keyboard",
-      "id": 233
-    },
-    {
-      "userId": 3,
-      "title": "Awesome Cotton Keyboard",
-      "id": 234
-    },
-    {
-      "userId": 3,
-      "title": "Handcrafted Soft Cheese",
-      "id": 235
-    },
     {
       "userId": 7,
       "title": "Elegant Soft Chair",
@@ -53,45 +33,66 @@
       "id": 237
     },
     {
-      "userId": 3,
-      "title": "Intelligent Fresh Ball",
-      "id": 238
-    },
-    {
-      "userId": 3,
-      "title": "Bespoke Metal Bacon",
-      "id": 239
-    },
-    {
-      "userId": 3,
-      "title": "Refined Bronze Chicken",
-      "id": 240
-    },
-    {
-      "userId": 3,
-      "title": "Incredible Cotton Bike",
-      "id": 241
-    },
-    {
-      "userId": 3,
-      "title": "Small Concrete Computer",
-      "id": 242
+      "userId": 4,
+      "title": "Rustic Cotton Sausages",
+      "id": 253
     },
     {
       "userId": 4,
-      "title": "Luxurious Rubber Computer",
-      "id": 243
-    },
-    {
-      "userId": 3,
-      "title": "Electronic Plastic Fish",
-      "id": 244
+      "title": "Handmade Fresh Chips",
+      "id": 254
     },
     {
       "userId": 4,
-      "title": "Awesome Fresh Keyboard",
-      "id": 245
+      "title": "Bespoke Plastic Table",
+      "id": 255
+    },
+    {
+      "userId": 4,
+      "title": "Tasty Frozen Ball",
+      "id": 256
+    },
+    {
+      "userId": 3,
+      "title": "Sleek Soft Hat",
+      "id": 258
+    },
+    {
+      "userId": 8,
+      "title": "Sleek Wooden Fish",
+      "id": 259
+    },
+    {
+      "userId": 8,
+      "title": "Modern Steel Bike",
+      "id": 260
+    },
+    {
+      "userId": 4,
+      "title": "Small Frozen Chicken",
+      "id": 261
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 258,
+      "url": "https://loremflickr.com/150/150/abstract?lock=46304",
+      "id": 1
+    },
+    {
+      "albumId": 258,
+      "url": "https://loremflickr.com/150/150/abstract?lock=53213",
+      "id": 2
+    },
+    {
+      "albumId": 258,
+      "url": "https://loremflickr.com/150/150/abstract?lock=51206",
+      "id": 3
+    },
+    {
+      "albumId": 258,
+      "url": "https://loremflickr.com/150/150/abstract?lock=89231",
+      "id": 4
+    }
+  ]
 }
